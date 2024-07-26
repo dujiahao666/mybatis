@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 开启mybatis对标准日志的实现   -->
+    <settings>
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+        <setting name="logImpl" value="LOG4J "/>
+    </settings>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+<!--            <transactionManager type="managed"/>   交给其他，比如说spirng，这里什么都没有接管，所以按jdbc的来，默认没有开启事务，写一条也是直接提交的
+ 我们就用jdbc来管理事务，这里，让事务有人去管理，这里大小写都无所谓
+ -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3307/powernode"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+    <!--   resource属性自动会从类的根路径下开始查找资源    -->
+        <mapper resource="CarMapper.xml"/>
+<!-- 方式二 -->
+<!--        <mapper url="file:///D:\ssm练习存档\mybatis练习\mybatis\mybatis-001-introduction\src\main\resources\CarMapper.xml"/>-->
+        <!--一般一个表对应一个xxx.xml  我们可以在这里设置很多个映射，然后具体的sql语句写在xxMapper.xml中  -->
+    </mappers>
+</configuration>

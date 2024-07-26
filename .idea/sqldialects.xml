@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/fuxi-004/src/main/resources/CarMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/mybatis-009-antic/src/main/resources/com/powernode/mybatis/mapper/CarMapper.xml" dialect="GenericSQL" />
+  </component>
+</project>

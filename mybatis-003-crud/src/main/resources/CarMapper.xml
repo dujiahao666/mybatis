@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fdsfdsa">
+    <!-- insert语句，id是指这条sql语句唯一的标识。这个id就代表了这条sql语句 -->
+    <insert id="insertCar">
+-- 使用map传参数，值用的是map的key#,#{里面是map的键}
+--         insert into t_car(id,car_num,brand,guide_price,produce_time,car_type) values (null,'1003','丰田霸道',30.0,'2000-10-11','燃油车')
+        insert into t_car(id,car_num,brand,guide_price,produce_time,car_type) values (null,#{car_num},#{brand},#{guide_price},#{produce_time},#{car_type})
+    </insert>
+
+    <insert id="insertPojo">
+-- 使用对象传参，值用的时对象的属性名，#{这里面写的是里面是类的属性名}
+        insert into t_car(id, car_num, brand, guide_price, produce_time, car_type) values (null, #{carNum}, #{brand}, #{guidePrice}, #{produceTime}, #{carType})
+    </insert>
+
+    <delete id="delepojo">
+-- 如果占位符只有一个，那么里面的内容就随便写写，都可以的
+        delete from  t_car where id=#{fa}
+    </delete>
+
+    <update id="updateByid">
+        update t_car set car_num=#{carNum},brand=#{brand},guide_price=#{guidePrice},produce_time=#{produceTime},car_type=#{carType} where id=#{id}
+    </update>
+
+    <select id="selectByid" resultType="com.powernode.mybatis.pojo.Car">
+-- select标签中resultType属性，这个属性用来告诉mybatis，查询结果集封装成什么类型的java对象，你需要告诉mybatis。通常写的是：全限定类名
+        select id,car_num as carNum,brand,guide_price as guidePrice,produce_time as produceTime,car_type as carType from t_car where id=#{sss}
+    </select>
+
+    <select id="selectByall" resultType="com.powernode.mybatis.pojo.Car">
+        select id,car_num as carNum,brand,guide_price as guidePrice,produce_time as produceTime,car_type as carType from t_car
+    </select>
+
+</mapper>

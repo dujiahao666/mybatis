@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="asd">
+
+   <insert id="ok1">
+       insert into t_car(id,car_num,brand,guide_price,produce_time,car_type)
+       values (null,'1003','快乐假期',55.3,'2024-07-03','燃油车')
+   </insert>
+
+    <insert id="ok2">
+        insert into t_car(id,car_num,brand,guide_price,produce_time,car_type)
+        values (null,#{k1},#{k2},#{k3},#{k4},#{k5})
+    </insert>
+
+    <insert id="ok3">
+        insert into t_car(id,car_num,brand,guide_price,produce_time,car_type)
+        values (null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})
+    </insert>
+
+    <select id="selectOne" resultType="com.powernode.curd.pojo.Car">
+        select id,car_num as carNum ,brand,guide_price as guidePrice, produce_time as produceTime,car_type as carType  from t_car where id=#{asd}
+    </select>
+
+    <select id="selectAll" resultType="com.powernode.curd.pojo.Car">
+        select id,car_num as carNum ,brand,guide_price as guidePrice, produce_time as produceTime,car_type as carType  from t_car
+    </select>
+</mapper>

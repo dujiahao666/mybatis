@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.powernode.mybatis.mapper.CarMapper">
+
+    <insert id="insert"  useGeneratedKeys="true" keyProperty="id">
+        insert into t_car
+        values (null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})
+    </insert>
+
+    <delete id="deleteByid">
+        delete
+        from t_car
+        where id=#{asd};
+    </delete>
+
+
+    <update id="update">
+        update
+            t_car set brand=#{brand},guide_price=#{guidePrice},produce_time=#{produceTime},car_type=#{carType}
+        where id=#{id};
+    </update>
+
+    <select id="selectByid" resultType="com.powernode.mybatis.pojo.Car">
+        select *
+        from t_car
+        where id=#{ids}
+    </select>
+
+    <select id="selectAll" resultType="com.powernode.mybatis.pojo.Car">
+        select *
+        from t_car
+    </select>
+
+    <select id="selectSome" resultType="Car">
+        select * from t_car where brand=#{a1} and guide_price=#{param2}
+    </select>
+
+    <select id="slectBrand" resultType="string">
+        select brand from t_car where id=#{id};
+    </select>
+
+    <select id="slectBrand2" resultType="map">
+        select brand,guide_price from t_car where id=#{id}
+    </select>
+
+    <select id="selectHaha" resultType="map">
+        select * from t_car
+    </select>
+
+    <select id="selectOa" resultType="car">
+        select * from t_car where brand like "%${brand}%"
+    </select>
+
+    <select id="daba" resultType="car">
+        select *
+        from t_car
+        <where>
+            <if test="param1 !=null and param1 !='' ">
+               or brand=#{param1}
+            </if>
+            <if test="param2 !=null and param2 !='' ">
+               and car_type=#{param2}
+            </if>
+            <if test="param3!=null and param3!='' ">
+               and guide_price &lt; #{param3}
+            </if>
+        </where>
+    </select>
+
+
+<!--    set
+搭配if进行使用，if语句成立并且不为null才生效，还能智能的去掉行尾的逗号
+
+-->
+    <update id="updatetSet" >
+        update t_car
+        <set>
+            <if test="carNum !=null and carNum !='' ">
+                car_num=#{carNum},
+            </if>
+            <if test="brand !=null and brand!='' ">
+                brand=#{brand},
+            </if>
+            <if test="guidePrice !=null and guidePrice !='' ">
+                guide_price=#{guidePrice},
+            </if>
+            <if test="produceTime !=null and produceTime !='' ">
+                produce_time=#{produceTime},
+            </if>
+            <if test="carType!=null and carType!='' ">
+                car_type=#{carType},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+
+<!--    <select id="selectOa" resultType="car">-->
+<!--        select * from t_car where brand like  "%"#{brand}"%"-->
+<!--    </select>-->
+    
+    <select id="select6" resultType="car">
+        select * from t_car where 
+        <choose>
+            <when test="brand!=null and brand!='' ">
+                brand like "%"#{brand}"%"
+            </when>
+            <when test="price!=null and price!='' ">
+                guide_price > #{price}
+            </when>
+            <otherwise>
+                car_type = #{carType}
+            </otherwise>
+        </choose>
+    </select>
+
+    <delete id="del" >
+        delete  from t_car
+        where  id in (
+        <foreach collection="param1" separator="," item="ia">
+            #{ia}
+        </foreach>
+        )
+    </delete>
+
+    <sql id="aab">
+        *
+    </sql>
+
+    <select id="jicha" resultType="Car">
+        select
+        <include refid="aab"></include>
+        from t_car;
+    </select>
+
+    <select id="jk" resultType="CAR">
+        select * from t_Car
+        <trim prefix="where" suffixOverrides="or|and">
+            <if test="arg0!=null and arg0!='' ">
+                brand like "%"#{arg0}"%" or
+            </if>
+        </trim>
+    </select>
+</mapper>

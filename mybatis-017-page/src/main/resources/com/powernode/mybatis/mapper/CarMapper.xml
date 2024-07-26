@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.powernode.mybatis.mapper.CarMapper">
+
+    <select id="selectByPage" resultType="car">
+        select * from t_Car limit #{startIndex},#{pageSize}
+    </select>
+
+
+
+    <!-- 使用插件，limit等相关字段可以省去，只用关注查询语句   -->
+    <select id="selectAll" resultType="Car">
+        select * from t_car
+    </select>
+
+</mapper>

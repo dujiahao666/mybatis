@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="javassist-008-test" />
+        <module name="mybatis-014-cache" />
+        <module name="mybatis-018-annotaion" />
+        <module name="mybatis-002-junit" />
+        <module name="mybatis-003-crud" />
+        <module name="mybatis-004-web" />
+        <module name="maven-demo" />
+        <module name="mybatis-012-dynamic-sql" />
+        <module name="parse-xml-by-dom4j005" />
+        <module name="mybatis-016-generator2" />
+        <module name="mybatis-011-select" />
+        <module name="godbatis-test" />
+        <module name="mybatis-009-antic" />
+        <module name="logger-for-java" />
+        <module name="mybatis-017-page" />
+        <module name="FuXi" />
+        <module name="untitled" />
+        <module name="godbatis" />
+        <module name="mybatis-004-configuration" />
+        <module name="mybatis-015-generator1" />
+        <module name="mybatis-001-introduction" />
+        <module name="mybatis-008-crud2" />
+        <module name="mybatis-013-advanced-mapping" />
+        <module name="fuxi-004" />
+        <module name="fuxi-003" />
+        <module name="fuxi-001" />
+        <module name="mybatis-007-web" />
+        <module name="mybatis-010-param" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fuxi-002" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.powernode.mybatis.mapper.CarMapper">
+
+   <!-- <select id="selectByCarType" resultType="com.powernode.mybatis.pojo.Car">
+        select id, car_num as carNum,brand,guide_price as guidePrice, produce_time as produceTime,car_type as carType from t_car where car_type=#{carType}
+    </select>-->
+
+    <select id="selectByCarType" resultType="com.powernode.mybatis.pojo.Car">
+        select id, car_num as carNum,brand,guide_price as guidePrice, produce_time as produceTime,car_type as carType from t_car where car_type=${carType}
+    </select>
+
+    <select id="selectAllByAscOrDesc" resultType="com.powernode.mybatis.pojo.Car">
+        select id,
+               car_num as carNum,
+               brand,
+               guide_price as guidePrice,
+               produce_time as produceTime,
+               car_type as carType
+        from
+            t_car
+        order by
+            produce_time  ${ascOrDesc}
+    </select>
+
+    <insert id="insertCar">
+        insert  into t_car  values (
+                                    #{id},
+                                    #{carNum},
+                                    #{brand},
+                                    #{guidePrice},
+                                    #{produceTime},
+                                    #{carType}
+                                   )
+
+    </insert>
+
+    <delete id="deleteBatch">
+        delete from t_car where id in(${ids})
+    </delete>
+
+    <select id="selectByBrandLike" resultType="car">
+        select id,
+               car_num as carNum,
+               brand,
+               guide_price as guidePrice,
+               produce_time as produceTime,
+               car_type as carType
+        from
+            t_car
+        where
+              brand  like  "%"#{brand}"%"
+    </select>
+
+    <insert id="insertCarUseGeneratedKeys" useGeneratedKeys="true" keyProperty="id">
+        insert  into t_car values (null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})
+    </insert>
+
+</mapper>

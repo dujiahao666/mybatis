@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/jdbc_Test/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-001-introduction/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-junit-test/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-002-junit/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/logger-for-java/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-003-crud/pom.xml" />
+        <option value="$PROJECT_DIR$/ces004/pom.xml" />
+        <option value="$PROJECT_DIR$/com.web/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-004-configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/parse-xml-by-dom4j005/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-006-web/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-007-web/pom.xml" />
+        <option value="$PROJECT_DIR$/javassist-test/pom.xml" />
+        <option value="$PROJECT_DIR$/javassist-008-test/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-008-crud2/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-009-antic/pom.xml" />
+        <option value="$PROJECT_DIR$/temp/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-010-param/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-011-select/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-012-dynamic-sql/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-013-advanced-mapping/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-014-cache/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-015-generator1/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-016-generator2/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-017-page/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-018-annotaion/pom.xml" />
+        <option value="$PROJECT_DIR$/godbatis/pom.xml" />
+        <option value="$PROJECT_DIR$/godbatis-test/pom.xml" />
+        <option value="$PROJECT_DIR$/FuXi/pom.xml" />
+        <option value="$PROJECT_DIR$/fuxi-001/pom.xml" />
+        <option value="$PROJECT_DIR$/fuxi-002/pom.xml" />
+        <option value="$PROJECT_DIR$/fuxi-003/pom.xml" />
+        <option value="$PROJECT_DIR$/fuxi-004/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ces004/pom.xml" />
+        <option value="$PROJECT_DIR$/com.web/pom.xml" />
+        <option value="$PROJECT_DIR$/fuxi-002/pom.xml" />
+        <option value="$PROJECT_DIR$/javassist-test/pom.xml" />
+        <option value="$PROJECT_DIR$/jdbc_Test/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-006-web/pom.xml" />
+        <option value="$PROJECT_DIR$/temp/pom.xml" />
+      </set>
+    </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

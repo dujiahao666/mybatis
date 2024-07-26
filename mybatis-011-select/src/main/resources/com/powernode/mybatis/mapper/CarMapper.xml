@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.powernode.mybatis.mapper.CarMapper">
+    <!--在数据库中，横线使用下划线，而idea(java使用中横线)，查询返回的值可以是   List<实体类>  或者  实体类（直接返回）
+       返回一条数据，mapper接口的方法返回值为car
+       返回多条数据，mapper接口的方法返回为List<car>
+    -->
+
+    <!--    <resultMap id="" type=""></resultMap>-->
+
+    <select id="selectById" resultType="car">
+        select id, car_num as carNum, brand, guide_price as guidePrice, produce_time as produceTime, car_type as carType
+        from t_car
+        where id = #{id}
+    </select>
+
+
+    <select id="selectAll" resultType="car">
+        select id, car_num as carNum, brand, guide_price as guidePrice, produce_time as produceTime, car_type as carType
+        from t_car
+    </select>
+
+    <!--    可见一条单个pojo不能接收多条记录，但是List<pojo>却能接收一条数据
+            可以向下兼容，不能向上整合
+    -->
+
+    <select id="selectByBrandLike" resultType="car">
+        select id, car_num as carNum, brand, guide_price as guidePrice, produce_time as produceTime, car_type as carType
+        from t_car
+        where brand like "%"#{brand}"%"
+    </select>
+
+    <select id="selectByIdRetMap" resultType="map">
+        select *
+        from t_car
+        where id = #{id}
+    </select>
+
+    <select id="selectByIdRetMapAll" resultType="map">
+        select id, car_num, produce_time as ppt
+        from t_car
+    </select>
+
+    <select id="slectAllRetMap" resultType="map">
+        select *
+        from t_car;
+    </select>
+
+    <select id="selecttest" resultType="map">
+        select *
+        from t_car
+        where id = #{param1}
+    </select>
+
+    <select id="selectAllByResultMap" resultMap="pol">
+        select *
+        from t_car
+    </select>
+
+    <resultMap id="pol" type="car">
+        <id property="id" column="id"/>
+        <result property="carNum" column="car_num"/>
+        <result property="produceTime" column="produce_time"/>
+        <result property="carType" column="car_type"/>
+        <result property="guidePrice" column="guide_price"/>
+    </resultMap>
+
+    <select id="selectByYS" resultType="car">
+        select * from t_car
+    </select>
+
+    <select id="selectTotal" resultType="long">
+        select count(*) from  t_car
+    </select>
+
+    <insert id="insertC">
+        insert into t_car values (null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType})
+    </insert>
+
+</mapper>
+
+
